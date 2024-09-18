@@ -2,7 +2,7 @@ import type { JEIEItem } from './JEIECategory'
 import type { NameMap } from './NameMap'
 import { iTypePrefix } from './NameMap'
 
-export default function getFullId(ingr: JEIEItem, nameMap: NameMap): string {
+export default function getFullId(ingr: JEIEItem, nameMap: NameMap, onWarning:(...args: string[]) => void): string {
   const splitted = ingr.name.split(':')
   let sNbt = ''
   let base: string
@@ -20,7 +20,7 @@ export default function getFullId(ingr: JEIEItem, nameMap: NameMap): string {
   let prefix: string = iTypePrefix[ingr.type]
   if (prefix === undefined) {
     // eslint-disable-next-line no-console
-    console.log('\n\n\n⚠️  Unregistered JEIExporter type:', ingr.type, '\n\n\n')
+    onWarning('\n\n\n⚠️  Unregistered JEIExporter type:', ingr.type, '\n\n\n')
     prefix = 'unknown'
   }
 
