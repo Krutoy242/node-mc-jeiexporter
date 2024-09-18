@@ -1,7 +1,26 @@
 {
   "name": "mc-jeiexporter",
   "version": "0.0.0",
+  "description": "Library to work with output of Minecraft mod JEIExporter",
+  "license": "Apache-2.0",
   "type": "module",
+  "repository": "https://github.com/Krutoy242/node-mc-jeiexporter",
+  "keywords": [
+    "minecraft",
+    "json",
+    "parser",
+    "JEI",
+    "JEIExporter",
+    "1.12.2",
+    "items",
+    "types"
+  ],
+  "main": "build/index.js",
+  "types": "build/index.d.js",
+  "files": [
+    "README.md",
+    "build"
+  ],
   "scripts": {
     "build": "rm -rf build && tsc"
   },
