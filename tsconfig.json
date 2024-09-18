@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "lib": ["es2020"],
+    "target": "ESNext",
+    "forceConsistentCasingInFileNames": true,
+    "downlevelIteration": true,
+    "esModuleInterop": true,
+    "declaration": true,
+    "strict": true,
+    "outDir": "build",
+  }
+}
