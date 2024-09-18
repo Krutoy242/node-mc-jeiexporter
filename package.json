@@ -1,6 +1,6 @@
 {
   "name": "mc-jeiexporter",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Library to work with output of Minecraft mod JEIExporter",
   "license": "Apache-2.0",
   "type": "module",
