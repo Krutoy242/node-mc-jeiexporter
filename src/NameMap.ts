@@ -5,6 +5,7 @@ export const iTypePrefix = {
   'fluid': 'fluid',
   'thaumcraft.api.aspects.AspectList': 'aspect',
   'requious.compat.jei.ingredient.Energy': 'rf',
+  'com.bordlistian.requious.compat.jei.ingredient.Energy': 'rf',
   'mekanism.api.gas.GasStack': '',
   'mctmods.immersivetechnology.common.util.compat.jei.GenericMultiblockIngredient': 'multiblock',
   'hellfirepvp.modularmachinery.common.integration.ingredient.HybridFluid': '',
@@ -45,8 +46,10 @@ export default function getNameMap(nameMapJsonTxt: string): NameMap {
 
   Object.entries(nameMapJson).forEach(([itype, vis]) => {
     let prefix: string = iTypePrefix[itype as IType]
-    if (prefix === undefined)
-      throw new Error(`Could not find iType in name map: ${itype}`)
+    if (prefix === undefined) {
+      console.warn(`[mc-jeiexporter] Unknown iType, skipping: ${itype}`)
+      return
+    }
     prefix = prefix ? `${prefix}:` : ''
 
     Object.entries(vis).forEach(([id, o]) => {
